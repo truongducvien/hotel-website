@@ -2,7 +2,7 @@
   "name": "fe23-bullet-proof",
   "version": "0.1.0",
   "engines": {
-    "node": "6.11.1"
+    "node": "6.13.0"
   },
   "private": true,
   "dependencies": {
