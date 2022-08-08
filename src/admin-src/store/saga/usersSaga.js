@@ -46,7 +46,7 @@ function updateUserById (change) {
 function* updateUserData (change) {
    try{
       yield call(()=>updateUserById(change.payload))
-      yield delay(200)
+      yield delay(500)
       yield call(fetchUsersData)
    } catch (e) {
       console.log("Error: ", e)
