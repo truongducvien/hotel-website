@@ -1,6 +1,9 @@
 {
   "name": "fe23-bullet-proof",
   "version": "0.1.0",
+  "engines": {
+    "node": "6.11.1"
+  },
   "private": true,
   "dependencies": {
     "@ant-design/icons": "4.0.0",
