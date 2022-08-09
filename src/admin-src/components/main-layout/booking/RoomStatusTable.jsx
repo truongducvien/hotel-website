@@ -10,12 +10,11 @@ import { Loading } from "../../shared-components/Loading";
 export default function RoomStatusTable () {
    const dispatch = useDispatch()
    const rooms = useSelector(state => state.roomReducer.rooms)
-   const isBookingLoading = useSelector(state => state.bookingReducer.isLoading) 
+   const isRoomsLoading = useSelector(state => state.roomReducer.isLoading) 
    const roomDefinition = ['Available', 'Active', 'Busy']
 
    useEffect(() => {
       dispatch(fetchRoomDataAction())
-      dispatch(fetchBookingDataAction());
    }, []);
 
    return (
@@ -31,7 +30,7 @@ export default function RoomStatusTable () {
             </div>
          </div>
 
-         {isBookingLoading? (
+         {isRoomsLoading? (
             <Loading />
          ):(
             <div className="bookingContent">

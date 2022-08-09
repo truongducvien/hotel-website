@@ -20,6 +20,7 @@ export default function BookingDetail () {
    const dispatch = useDispatch();
    const rooms = useSelector(state => state.roomReducer.rooms)
    const bookings = useSelector(state => state.bookingReducer.bookings)
+   const isBookingLoading = useSelector(state => state.bookingReducer.isLoading)
 
    const [booking, setBooking] = useState()
    const [bookingOptions, setBookingOptions] = useState()
@@ -333,15 +334,19 @@ export default function BookingDetail () {
 
                <div className="bookingOption">
                   <div className="bookingOptionTitle">Booking detail:</div>
-                  {bookingOptions &&
-                     <Table 
-                        className="bookingOptionTable"
-                        columns={optionColumns} 
-                        dataSource={bookingOptions} 
-                        size='small'
-                        pagination={false}
-                     />
-                  }
+
+                  {isBookingLoading? (
+                     <Loading />
+                  ):(
+                     bookingOptions &&
+                        <Table 
+                           className="bookingOptionTable"
+                           columns={optionColumns} 
+                           dataSource={bookingOptions} 
+                           size='small'
+                           pagination={false}
+                        />
+                  )}
                </div>
 
                <button className="endBookingButton" onClick={handleEndBooking}>End booking</button>
