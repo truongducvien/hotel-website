@@ -30,7 +30,7 @@ function patchBookingData (change) {
 function* updateBookings (change) {
    try{  
       yield call(patchBookingData, change)
-      yield delay(200)
+      yield delay(500)
       yield call(fetchBookingData)
    } catch (e) {
       console.log('Error: ', e)

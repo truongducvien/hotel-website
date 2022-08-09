@@ -16,6 +16,7 @@ const roomSlice = createSlice({
       fetchRoomDataSuccess(state, action){
          state.rooms = action.payload;
          state.isLoading = false;
+         console.log(action.payload)
       },
       fetchRoomDataFail(state, action){
          
@@ -42,6 +43,7 @@ const roomSlice = createSlice({
          state.rooms = [...state.rooms, action.payload]
       },
       updateRoomsAction (state, action) {
+         console.log('Update rooms: ', action.payload)
          state.isLoading = true;
       }
    }

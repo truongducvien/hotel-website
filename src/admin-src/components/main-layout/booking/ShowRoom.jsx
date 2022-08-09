@@ -49,6 +49,10 @@ export default function ShowRoom ({ roomsGroup }){
       setIsModalVisible(false)
    }
 
+   useEffect(() => {
+      console.log('render showRooms components');
+   })
+
    return (
       <>
          <span className="typeTitle">{roomsGroup.typeRoom}</span>

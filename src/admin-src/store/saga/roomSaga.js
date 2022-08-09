@@ -31,7 +31,7 @@ function patchData (change){
 function* updateRooms (change) {
    try {
       yield call(patchData, change)
-      yield delay(200)
+      yield delay(500)
       yield call(fetchRoomData)
    } catch (e){
       console.log("Error: ", e)
